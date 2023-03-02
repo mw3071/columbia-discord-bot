@@ -18,7 +18,7 @@ df['uni'] = []
 df['prof'] = [[]]
 df['classes'] = [[]]
 
-print(df)
+# print(df)
 
 @bot.event
 async def on_ready():
@@ -32,9 +32,13 @@ async def addclass(ctx):
     username = str(ctx.author)
     print(username)
     class_name = ctx.message.content.split(' ')[1]
-    print(class_name)
+    # print(class_name)
+    print("df username: ")
     print(df['username'])
-    if username not in df['username']:
+    if df['username'].eq(username).any():
+        print("in df")
+    else:
+    # if username not in df['username']:
         create_user(username)
     # index = df.loc[df['username']==username, 'index']
     # temp = df.iloc[index]['classes'][0]
