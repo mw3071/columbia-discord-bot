@@ -1,13 +1,20 @@
 import discord
 import pandas as pd
+import json
 from discord.ext import commands
+
+
+with open('config.json', 'r') as cfg:
+    data = json.load(cfg)
+    token = data["token"]
+
 
 def create_user(username):
     df.loc[len(df)] = [len(df)-1, username, "", [], []]
     # print("df")
     # print(df)
 
-BOT_TOKEN = 'MTA3OTkwMjk0Njc2ODE5OTcwMA.GuXQeK.qff4xE99peonTNGfMjzcXqSdTNHYTN-ru-leyM'
+print(token)
 CHANNEL_ID = '1079912337571598438'
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -53,5 +60,5 @@ async def add_prof(ctx):
 async def add_restaurant(ctx):
     await ctx.send('addrest')
 
-bot.run(BOT_TOKEN)
+bot.run(token)
 
