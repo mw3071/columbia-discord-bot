@@ -34,7 +34,10 @@ async def on_ready():
     # await channel.send("Bot is now running!")
 
 @bot.command()
+async def ping(ctx):
+    await ctx.send('pong!')
 
+@bot.command()
 async def addclass(ctx):
     username = str(ctx.author)
     print(username)
@@ -54,11 +57,25 @@ async def addclass(ctx):
         
     await ctx.send('Added class!')
 
-async def add_prof(ctx):
-    await ctx.send('addclass')
+@bot.command()
+async def addprof(ctx):
+    await ctx.send('Added prof!')
 
-async def add_restaurant(ctx):
-    await ctx.send('addrest')
+@bot.command()
+async def addrestaurant(ctx):
+    await ctx.send('Added rest!')
+
+@bot.command()
+async def getusernames(ctx):
+    await ctx.send(df['username'])
+
+@bot.command()
+async def getclasses(ctx):
+    await ctx.send(df['class_name'][0])
+
+@bot.command()
+async def getunis(ctx):
+    await ctx.send(df['uni'])
 
 bot.run(token)
 

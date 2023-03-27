@@ -12,11 +12,11 @@ testcollector = dismock.TestCollector()
 
 @testcollector()
 async def test_ping(interface):
-	await interface.assert_reply_equals('ping?', 'pong!')
+	await interface.assert_reply_equals('!ping', 'pong!')
 
 @testcollector()
-async def test_new_one(interface):
-	await interface.assert_reply_equals('hello', 'world!')
+async def test_add_class(interface):
+	await interface.assert_reply_equals('!addclass COMS0000', 'Added class!')
 
 # Make it easy to run the tests
 
