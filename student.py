@@ -43,8 +43,8 @@ class Student(object):
             print("added!")
     
     def remove_prof(self, p):
-        if p in self.classes:
-            self.classes.remove(p)
+        if p in self.profs:
+            self.profs.remove(p)
             print("removed")
         else:
             print("prof not found")
@@ -53,4 +53,4 @@ class Student(object):
         return self.profs
     
     def get_classes(self):
-        return self.profs
+        return self.classes
