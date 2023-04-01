@@ -11,9 +11,9 @@ with open('./config.json', 'r') as cfg:
 
 
 # def create_user(username):
-    # df.loc[len(df)] = [len(df)-1, username, "", [], []]
-    # print("df")
-    # print(df)
+# df.loc[len(df)] = [len(df)-1, username, "", [], []]
+# print("df")
+# print(df)
 
 print(token)
 CHANNEL_ID = '1079912337571598438'
@@ -30,15 +30,18 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 users = {}
 s = None
 
+
 @bot.event
 async def on_ready():
     print("Bot is now running")
     channel = bot.get_channel(CHANNEL_ID)
     # await channel.send("Bot is now running!")
 
+
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong!')
+
 
 @bot.command(help="creates a new student, must give it a uni")
 async def createuser(ctx):
@@ -52,17 +55,20 @@ async def createuser(ctx):
     print(users)
     await ctx.send('created!')
 
+
 @bot.command()
 async def addclass(ctx):
     username = str(ctx.author)
     users[username].add_class(ctx.message.content.split(' ')[1])
     print(users[username])
-    
+
     await ctx.send('Added class!')
+
 
 @bot.command()
 async def addprof(ctx):
     await ctx.send('Added prof!')
+
 
 # @bot.command()
 # async def getusernames(ctx):
@@ -77,4 +83,3 @@ async def addprof(ctx):
 #     await ctx.send(df['uni'])
 
 bot.run(token)
-

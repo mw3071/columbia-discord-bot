@@ -1,13 +1,13 @@
-class Student(object):   
+class Student(object):
     def __init__(self, username, uni):
         self.username = username
         self.uni = uni
         self.classes = []
         self.profs = []
-    
+
     def _cmpkey(self):
-        return (self.uni)
-    
+        return self.uni
+
     def __str__(self) -> str:
         ret = ""
         ret += self.username + ", " + self.uni + ", ["
@@ -19,7 +19,7 @@ class Student(object):
             ret += p + ", "
         ret += "]"
         return ret
-    
+
     def set_uni(self, u):
         self.uni = u
 
@@ -41,16 +41,16 @@ class Student(object):
         if p not in self.profs:
             self.profs.append(p)
             print("added!")
-    
+
     def remove_prof(self, p):
         if p in self.profs:
             self.profs.remove(p)
             print("removed")
         else:
             print("prof not found")
-    
+
     def get_profs(self):
         return self.profs
-    
+
     def get_classes(self):
         return self.classes
