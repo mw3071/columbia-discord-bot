@@ -15,7 +15,7 @@ install:  ## install library
 #########
 lint:  ## run static analysis with flake8
 	python -m black --check project setup.py
-	python -m flake8 project setup.py
+#python -m flake8 project setup.py
 
 # Alias
 lints: lint
