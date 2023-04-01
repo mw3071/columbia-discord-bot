@@ -1,9 +1,9 @@
-from student import Student
+from project import student
 import pytest
 
 
 def test_add_class():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     print('testing add class')
     s.add_class('test-class')
     assert s.classes == ['test-class']
@@ -11,7 +11,7 @@ def test_add_class():
 
 
 def test_add_prof():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     print('testing add profs')
     s.add_prof('test-prof')
     assert s.profs == ['test-prof']
@@ -19,7 +19,7 @@ def test_add_prof():
 
 
 def test_remove_class():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     print('testing remove class')
     s.add_class('test-class')
     s.remove_class('test-class')
@@ -28,7 +28,7 @@ def test_remove_class():
 
 
 def test_remove_prof():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     print('testing remove profs')
     s.add_prof('test-prof')
     s.remove_prof('test-prof')
@@ -37,20 +37,20 @@ def test_remove_prof():
 
 
 def test_set_uni():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     print('testing set uni')
     s.set_uni('uni-test')
     assert s.uni == 'uni-test'
 
 
 def test_get_classes():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     s.add_class('test-class')
     assert s.get_classes() == ['test-class']
 
 
 def test_get_profs():
-    s = Student('test-username', 'test-uni')
+    s = student.Student('test-username', 'test-uni')
     s.add_prof('test-prof')
     assert s.get_profs() == ['test-prof']
 
