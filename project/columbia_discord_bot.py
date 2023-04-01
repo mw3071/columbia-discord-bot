@@ -5,7 +5,7 @@ from student import Student
 from discord.ext import commands
 
 
-with open('config.json', 'r') as cfg:
+with open('./config.json', 'r') as cfg:
     data = json.load(cfg)
     token = data["token"]
 
