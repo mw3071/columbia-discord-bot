@@ -27,7 +27,7 @@ format:  ## run autoformatting with black
 fix: format
 
 check:  ## check assets for packaging
-#check-manifest -v
+# check-manifest -v
 
 # Alias
 checks: check
@@ -42,7 +42,7 @@ test: ## clean and run unit tests
 	python -m pytest -v project/tests/unit_tests.py
 
 coverage:  ## clean and run unit tests with coverage
-# python -m pytest -v project/tests/unit_tests.py --cov=project --cov-branch --cov-fail-under=75 --cov-report term-missing
+	python -m pytest -v project/tests/unit_tests.py --cov=project --cov-branch --cov-fail-under=50 --cov-report term-missing
 
 # Alias
 tests: test

@@ -118,8 +118,7 @@ class Interface:
     Test functions should not access the discord.py client directly.
     '''
 
-    def __init__(self, client: discord.Client,
-                 channel: discord.TextChannel, target: discord.User) -> None:
+    def __init__(self, client: discord.Client, channel: discord.TextChannel, target: discord.User) -> None:
         self.client = client  # The discord.py client object
         self.channel = channel  # The channel the test is running in
         self.target = target  # The bot which we are testing
@@ -135,12 +134,10 @@ class Interface:
     async def wait_for_reaction(self, message):
         def check(reaction, user):
             return (
-                reaction.message.id == message.id and user ==
-                self.target and reaction.message.channel == self.channel
+                reaction.message.id == message.id and user == self.target and reaction.message.channel == self.channel
             )
 
-        result = await self.client.wait_for_reaction(
-            timeout=TIMEOUT, check=check)
+        result = await self.client.wait_for_reaction(timeout=TIMEOUT, check=check)
         if result is None:
             raise NoReactionError
         return result
@@ -236,8 +233,7 @@ class Interface:
         return response
 
     async def assert_reaction_equals(self, contents, emoji):
-        reaction = await self.wait_for_reaction(
-            await self.send_message(contents))
+        reaction = await self.wait_for_reaction(await self.send_message(contents))
         if str(reaction.emoji) != emoji:
             raise ReactionDidNotMatchError
         return reaction
@@ -245,8 +241,7 @@ class Interface:
     async def ensure_silence(self):
         '''Ensures that the bot does not post any messages
         for some number of seconds.'''
-        result = await self.client.wait_for_message(
-            timeout=TIMEOUT, channel=self.channel, author=self.target)
+        result = await self.client.wait_for_message(timeout=TIMEOUT, channel=self.channel, author=self.target)
         if result is not None:
             raise UnexpectedResponseError
 
@@ -259,8 +254,7 @@ class Interface:
         await self.client.add_reaction(message, u'\u2714')
         await self.client.add_reaction(message, u'\u274C')
         await asyncio.sleep(0.5)
-        reaction = await self.client.wait_for_reaction(
-            timeout=TIMEOUT, message=message)
+        reaction = await self.client.wait_for_reaction(timeout=TIMEOUT, message=message)
         if reaction is None:
             raise HumanResponseTimeout
         reaction, _ = reaction
@@ -290,8 +284,7 @@ class ExpectCalls:  # pylint: disable=too-few-public-methods
         if self.call_count != self.expected_calls:
             message = """{} was called {} times.
             It was expcted to have been called {} times"""
-            raise RuntimeError(message.format(
-                self.function, self.call_count, self.expected_calls))
+            raise RuntimeError(message.format(self.function, self.call_count, self.expected_calls))
 
 
 class TestCollector:
@@ -306,8 +299,7 @@ class TestCollector:
         name = name or function.__name__
         test = Test(name, function, needs_human=needs_human)
         if name in self._tests:
-            raise KeyError(
-                'A test case called {} already exists.'.format(name))
+            raise KeyError('A test case called {} already exists.'.format(name))
         self._tests.append(test)
 
     def find_by_name(self, name: str):
@@ -347,11 +339,9 @@ class DiscordBot(discord.Client):
         for i in server.members:
             if self._target_name in i.name.lower():
                 return i
-        raise KeyError(
-            'Could not find memory with name {}'.format(self._target_name))
+        raise KeyError('Could not find memory with name {}'.format(self._target_name))
 
-    async def run_test(self, test: Test, channel: discord.TextChannel,
-                       stop_error: bool = False) -> TestResult:
+    async def run_test(self, test: Test, channel: discord.TextChannel, stop_error: bool = False) -> TestResult:
         '''Run a single test in a given channel.
         Updates the test with the result, and also returns it.
         '''
@@ -419,10 +409,16 @@ class DiscordUI(DiscordBot):
             if name == 'all':
                 await self._run_by_predicate(message.channel, lambda t: True)
             elif name == 'unrun':
-                def pred(t): return t.result is TestResult.UNRUN
+
+                def pred(t):
+                    return t.result is TestResult.UNRUN
+
                 await self._run_by_predicate(message.channel, pred)
             elif name == 'failed':
-                def pred(t): return t.result is TestResult.FAILED
+
+                def pred(t):
+                    return t.result is TestResult.FAILED
+
                 await self._run_by_predicate(message.channel, pred)
             elif '*' in name:
                 regex = re.compile(name.replace('*', '.*'))
@@ -432,8 +428,7 @@ class DiscordUI(DiscordBot):
                 await self.send_message(message.channel, text.format(name))
             else:
                 await message.channel.send('Running test `{}`'.format(name))
-                await self.run_test(
-                    self._tests.find_by_name(name), message.channel)
+                await self.run_test(self._tests.find_by_name(name), message.channel)
                 await self._display_stats(message.channel)
         # Status display command
         elif message.content in ['::stats', '::list']:
