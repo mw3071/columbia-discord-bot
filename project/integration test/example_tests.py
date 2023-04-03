@@ -1,6 +1,6 @@
 '''
-	Run with:
-		python example_tests.py TARGET_NAME TESTER_TOKEN
+    Run with:
+        python example_tests.py TARGET_NAME TESTER_TOKEN
 '''
 
 import sys

@@ -1,5 +1,4 @@
 import discord
-import pandas as pd
 import json
 from student import Student
 from discord.ext import commands
@@ -9,24 +8,10 @@ with open('./config.json', 'r') as cfg:
     data = json.load(cfg)
     token = data["token"]
 
-
-# def create_user(username):
-# df.loc[len(df)] = [len(df)-1, username, "", [], []]
-# print("df")
-# print(df)
-
 print(token)
 CHANNEL_ID = '1079912337571598438'
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
-# df = pd.DataFrame()
-# df['index'] = []
-# df['username'] = []
-# df['uni'] = []
-# df['prof'] = [[]]
-# df['classes'] = [[]]
-
-# print(df)
 users = {}
 s = None
 
@@ -34,8 +19,6 @@ s = None
 @bot.event
 async def on_ready():
     print("Bot is now running")
-    channel = bot.get_channel(CHANNEL_ID)
-    # await channel.send("Bot is now running!")
 
 
 @bot.command()

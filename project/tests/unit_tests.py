@@ -1,5 +1,4 @@
 from project import student
-import pytest
 
 
 def test_add_class():
