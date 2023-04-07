@@ -26,3 +26,6 @@ Invite this bot using this [link](https://discord.com/api/oauth2/authorize?clien
 ```!getclasses <class>``` - gives you the list of classes you have
 
 ```!getprofs <professor>``` - gives you the list of professors you have
+
+## Downloading and installing this repo
+You can check out CONTRIBUTING.md to find out how to fork, clone, and make edits to this bot. You will need your own bot token from Discord along with some other dependencies.
