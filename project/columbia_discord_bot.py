@@ -59,6 +59,10 @@ async def addclass(ctx):
 async def addprof(ctx):
     '''takes the discord context and extracts professor 
     from the message, and then adds a professor  to the student'''
+    username = str(ctx.author)
+    users[username].add_prof(ctx.message.content.split(' ')[1])
+    print(users[username])
+    
     await ctx.send('Added prof!')
 
 
