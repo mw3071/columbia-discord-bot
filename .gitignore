@@ -132,3 +132,8 @@ dmypy.json
 .config.json
 config.json
 ./config.json
+
+#docs
+docs/_build
+docs/_static
+docs/_templates
