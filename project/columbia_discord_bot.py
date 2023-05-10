@@ -2,9 +2,13 @@ import discord
 import json
 from student import Student
 from discord.ext import commands
+import os
 
 
-with open('./config.json', 'r') as cfg:
+directory_path = os.path.dirname(os.path.abspath(__file__)) 
+new_path = os.path.join(directory_path, "config.json")
+
+with open(new_path, 'r') as cfg:
     data = json.load(cfg)
     token = data["token"]
 

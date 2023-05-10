@@ -14,13 +14,20 @@ release = '0.1.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['recommonmark', 'sphinxcontrib.napoleon']
+extensions = ['recommonmark', 'sphinx.ext.napoleon']
 source_suffix = ['.rst', '.md']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
+import os
+import sys
+# sys.path.append(os.path.abspath('../..'))
+# sys.path.append(os.path.abspath('..'))
+# sys.path.insert(0, os.path.abspath('..'))
+sys.path.append(os.path.abspath(
+    os.path.join(__file__, "../../project")
+))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

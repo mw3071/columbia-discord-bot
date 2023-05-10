@@ -1,7 +1,8 @@
-docs
-====
+project
+=======
 
 .. toctree::
    :maxdepth: 4
 
-   conf
+   columbia_discord_bot
+   student

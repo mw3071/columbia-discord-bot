@@ -1,7 +1,7 @@
-conf module
-===========
+student module
+==============
 
-.. automodule:: conf
+.. automodule:: student
    :members:
    :undoc-members:
    :show-inheritance:
