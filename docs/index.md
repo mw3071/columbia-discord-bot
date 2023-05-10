@@ -8,6 +8,12 @@
 - bullets
 
 ```eval_rst
+.. toctree::
+   :maxdepth: 2
+
+   ./source/columbia_discord_bot
+   ./source/student
+   ./source/modules
 .. note::
       We can still mix rst, which we'll use for autodocumentation
 ```
