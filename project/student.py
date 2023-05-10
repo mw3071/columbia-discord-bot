@@ -30,7 +30,7 @@ class Student(object):
             print("already added")
 
     def remove_class(self, c):
-        '''Takes in a string c and removes it from the student's classes array'''
+        '''Takes in a string c and removes it from the student class array'''
         if c in self.classes:
             self.classes.remove(c)
             print("removed")
