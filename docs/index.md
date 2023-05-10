@@ -2,8 +2,7 @@
 
 ```eval_rst
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
-   ./source/columbia_discord_bot
    ./source/student
 ```
