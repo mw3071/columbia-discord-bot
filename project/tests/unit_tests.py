@@ -1,7 +1,4 @@
-import sys
-
-sys.path.insert(1, '../')
-import student
+from project import student
 
 
 def test_add_class():
