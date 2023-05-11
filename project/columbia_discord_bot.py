@@ -68,17 +68,24 @@ async def addprof(ctx):
 
     await ctx.send('Added prof!')
 
+@bot.command()
+async def lookupclass(ctx):
+    '''takes the discord context and extracts a class from the message,
+    and then returns unis with that class'''
+    username = str(ctx.author)
+    c = users[username].look_up_class(ctx.message.content.split(' ')[1], users)
+    print(c)
 
-# @bot.command()
-# async def getusernames(ctx):
-#     await ctx.send(df['username'])
+    await ctx.send(c)
 
-# @bot.command()
-# async def getclasses(ctx):
-#     await ctx.send(df['class_name'][0])
+@bot.command()
+async def lookupprof(ctx):
+    '''takes the discord context and extracts a class from the message,
+    and then returns unis with that class'''
+    username = str(ctx.author)
+    p = users[username].look_up_prof(ctx.message.content.split(' ')[1], users)
+    print(p)
 
-# @bot.command()
-# async def getunis(ctx):
-#     await ctx.send(df['uni'])
+    await ctx.send(p)
 
 bot.run(token)

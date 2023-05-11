@@ -58,3 +58,31 @@ class Student(object):
     def get_classes(self):
         '''returns the student's classes array'''
         return self.classes
+
+    def look_up_class(self, s, arr):
+        '''returns classes that were searched'''
+        print("looking up: ")
+        print(s)
+        print(arr)
+        temp = []
+        for key in arr:
+            user = arr[key]
+            for c in user.classes:
+                if c == s:
+                    temp.append(user.uni)
+                    print(user.uni)
+        return temp
+
+    def look_up_prof(self, s, arr):
+        '''returns profs that were searched'''
+        print("looking up: ")
+        print(s)
+        print(arr)
+        temp = []
+        for key in arr:
+            user = arr[key]
+            for c in user.profs:
+                if c == s:
+                    temp.append(user.uni)
+                    print(user.uni)
+        return temp
