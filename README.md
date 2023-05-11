@@ -5,6 +5,7 @@
 [![PyPI](https://img.shields.io/pypi/v/columbia-discord-bot)](https://pypi.org/project/columbia-discord-bot/)
 ![GitHub](https://img.shields.io/github/license/mw3071/columbia-discord-bot)
 ![GitHub issues](https://img.shields.io/github/issues/mw3071/columbia-discord-bot)
+![Docs](https://img.shields.io/readthedocs/columbia-discord-bot)
 
 ## Overview
 A Discord bot that allows users to keep track of and find other students with the same classes and professors.
