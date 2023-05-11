@@ -68,6 +68,7 @@ async def addprof(ctx):
 
     await ctx.send('Added prof!')
 
+
 @bot.command()
 async def lookupclass(ctx):
     '''takes the discord context and extracts a class from the message,
@@ -78,6 +79,7 @@ async def lookupclass(ctx):
 
     await ctx.send(c)
 
+
 @bot.command()
 async def lookupprof(ctx):
     '''takes the discord context and extracts a class from the message,
@@ -87,5 +89,6 @@ async def lookupprof(ctx):
     print(p)
 
     await ctx.send(p)
+
 
 bot.run(token)

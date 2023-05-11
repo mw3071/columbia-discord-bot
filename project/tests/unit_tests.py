@@ -1,6 +1,8 @@
 import sys
+
 sys.path.insert(1, '../')
 import student
+
 
 def test_add_class():
     s = student.Student('test-username', 'test-uni')
@@ -54,6 +56,7 @@ def test_get_profs():
     s.add_prof('test-prof')
     assert s.get_profs() == ['test-prof']
 
+
 def test_look_up_class():
     users = {}
     s = student.Student('student1', 'uni1')
@@ -72,6 +75,7 @@ def test_look_up_class():
     assert test_str == [s.uni, s1.uni]
     test_str = s1.look_up_class('test-class-1', users)
     assert test_str == [s2.uni]
+
 
 def test_look_up_prof():
     users = {}

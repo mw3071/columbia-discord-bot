@@ -1,6 +1,8 @@
 import sys
+
 sys.path.insert(1, '../')
 import student
+
 
 def test():
     print('running tests')
@@ -41,4 +43,3 @@ def test():
 
     s.set_uni('changed-username')
     assert s.uni == 'changed-username'
-    
