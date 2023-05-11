@@ -1,5 +1,6 @@
-from project import student
-
+import sys
+sys.path.insert(1, '../')
+import student
 
 def test_add_class():
     s = student.Student('test-username', 'test-uni')
@@ -52,15 +53,3 @@ def test_get_profs():
     s = student.Student('test-username', 'test-uni')
     s.add_prof('test-prof')
     assert s.get_profs() == ['test-prof']
-
-
-# def run_all():
-#     print('running tests')
-#     s = Student('test-username', 'test-uni')
-#     test_set_uni(s)
-#     test_add_class(s)
-#     test_add_prof(s)
-#     test_get_classes(s)
-#     test_get_profs(s)
-#     test_remove_class(s)
-#     test_remove_prof(s)
