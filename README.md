@@ -2,11 +2,10 @@
 
 [![Build Status](https://github.com/mw3071/columbia-discord-bot/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/mw3071/columbia-discord-bot/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/mw3071/columbia-discord-bot/branch/main/graph/badge.svg)](https://codecov.io/gh/mw3071/columbia-discord-bot)
-[![PyPI](https://img.shields.io/pypi/v/columbia-discord-bot)](https://pypi.org/project/columbia-discord-bot/)
 ![GitHub](https://img.shields.io/github/license/mw3071/columbia-discord-bot)
 ![GitHub issues](https://img.shields.io/github/issues/mw3071/columbia-discord-bot)
 ![Docs](https://img.shields.io/readthedocs/columbia-discord-bot)
-
+![PyPI](https://img.shields.io/pypi/v/columbia-discord-bot?style=for-the-badge)
 ## Overview
 A Discord bot that allows users to keep track of and find other students with the same classes and professors.
 
